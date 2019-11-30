@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>response响应对象 | NotFoundHY</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="servlet">
+    <meta name="description" content="1.提供的方法void addCookie(Cookie cookie);​    服务端向客户端增加cookie对象 void sendRedirect(String location) throw IOException;​    页面跳转的一种方式(重定向) void setContetType(String type);​    设置服务端响应的编码(contentType类型)">
+<meta name="keywords" content="servlet">
+<meta property="og:type" content="article">
+<meta property="og:title" content="response响应对象">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;07&#x2F;01&#x2F;response%E5%93%8D%E5%BA%94%E5%AF%B9%E8%B1%A1&#x2F;index.html">
+<meta property="og:site_name" content="NotFoundHY">
+<meta property="og:description" content="1.提供的方法void addCookie(Cookie cookie);​    服务端向客户端增加cookie对象 void sendRedirect(String location) throw IOException;​    页面跳转的一种方式(重定向) void setContetType(String type);​    设置服务端响应的编码(contentType类型)">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="c:&#x2F;Users&#x2F;60993&#x2F;AppData&#x2F;Roaming&#x2F;Typora&#x2F;typora-user-images&#x2F;1555738079345.png">
+<meta property="og:image" content="c:&#x2F;Users&#x2F;60993&#x2F;AppData&#x2F;Roaming&#x2F;Typora&#x2F;typora-user-images&#x2F;1555738113918.png">
+<meta property="og:image" content="c:&#x2F;Users&#x2F;60993&#x2F;AppData&#x2F;Roaming&#x2F;Typora&#x2F;typora-user-images&#x2F;1555738671040.png">
+<meta property="og:image" content="c:&#x2F;Users&#x2F;60993&#x2F;AppData&#x2F;Roaming&#x2F;Typora&#x2F;typora-user-images&#x2F;1555742270529.png">
+<meta property="og:updated_time" content="2019-07-01T11:44:11.599Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:&#x2F;Users&#x2F;60993&#x2F;AppData&#x2F;Roaming&#x2F;Typora&#x2F;typora-user-images&#x2F;1555738079345.png">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">黄阳</h5>
+          <a href="mailto:609936180@qq.com" target="_blank" rel="noopener" title="609936180@qq.com" class="mail">609936180@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">response响应对象</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">response响应对象</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-06-30T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2019-07-01
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-提供的方法"><span class="post-toc-number">1.</span> <span class="post-toc-text">1.提供的方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#void-addCookie-Cookie-cookie"><span class="post-toc-number">1.0.0.0.1.</span> <span class="post-toc-text">void addCookie(Cookie cookie);</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#void-sendRedirect-String-location-throw-IOException"><span class="post-toc-number">1.0.0.0.2.</span> <span class="post-toc-text">void sendRedirect(String location) throw IOException;</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#void-setContetType-String-type"><span class="post-toc-number">1.0.0.0.3.</span> <span class="post-toc-text">void setContetType(String type);</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-示例：登陆页面校验"><span class="post-toc-number">2.</span> <span class="post-toc-text">2.示例：登陆页面校验</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-请求转发和重定向的区别"><span class="post-toc-number">3.</span> <span class="post-toc-text">3.请求转发和重定向的区别</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#请求转发-重定向"><span class="post-toc-number">3.0.0.1.</span> <span class="post-toc-text">请求转发                                重定向</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#请求转发："><span class="post-toc-number">3.1.</span> <span class="post-toc-text">请求转发：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#null"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">
+                
+                    
+                    
+                
+                1555738079345
+            </span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#重定向"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">重定向</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#例："><span class="post-toc-number">3.3.1.</span> <span class="post-toc-text">例：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#请求转发：-1"><span class="post-toc-number">3.3.1.0.1.</span> <span class="post-toc-text">请求转发：</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#重定向："><span class="post-toc-number">3.3.1.0.2.</span> <span class="post-toc-text">重定向：</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-session和Cookie"><span class="post-toc-number">4.</span> <span class="post-toc-text">4.session和Cookie</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#步骤："><span class="post-toc-number">4.0.0.0.1.</span> <span class="post-toc-text">步骤：</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#示例代码："><span class="post-toc-number">4.0.1.</span> <span class="post-toc-text">示例代码：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#结果："><span class="post-toc-number">4.0.1.1.</span> <span class="post-toc-text">结果：</span></a></li></ol></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-response响应对象"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">response响应对象</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-07-01 00:00:00" datetime="2019-06-30T16:00:00.000Z"  itemprop="datePublished">2019-07-01</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="1-提供的方法"><a href="#1-提供的方法" class="headerlink" title="1.提供的方法"></a>1.提供的方法</h2><h6 id="void-addCookie-Cookie-cookie"><a href="#void-addCookie-Cookie-cookie" class="headerlink" title="void addCookie(Cookie cookie);"></a>void addCookie(Cookie cookie);</h6><p>​    服务端向客户端增加cookie对象</p>
+<h6 id="void-sendRedirect-String-location-throw-IOException"><a href="#void-sendRedirect-String-location-throw-IOException" class="headerlink" title="void sendRedirect(String location) throw IOException;"></a>void sendRedirect(String location) throw IOException;</h6><p>​    页面跳转的一种方式(重定向)</p>
+<h6 id="void-setContetType-String-type"><a href="#void-setContetType-String-type" class="headerlink" title="void setContetType(String type);"></a>void setContetType(String type);</h6><p>​    设置服务端响应的编码(contentType类型)</p>
+<a id="more"></a>
+
+
+
+<h2 id="2-示例：登陆页面校验"><a href="#2-示例：登陆页面校验" class="headerlink" title="2.示例：登陆页面校验"></a>2.示例：登陆页面校验</h2><p>login.jsp</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&lt;%@ page contentType&#x3D;&quot;text&#x2F;html;charset&#x3D;UTF-8&quot; language&#x3D;&quot;java&quot; %&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    &lt;title&gt;Title&lt;&#x2F;title&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;head&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">        &lt;form action&#x3D;&quot;check.jsp&quot;method&#x3D;&quot;post&quot;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">            用户名：&lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;username&quot;&gt;&lt;br&#x2F;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">            密码：&lt;input type&#x3D;&quot;password&quot; name&#x3D;&quot;userpwd&quot;&gt;&lt;br&#x2F;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">            &lt;input type&#x3D;&quot;submit&quot; value&#x3D;&quot;登录&quot;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">        &lt;&#x2F;form&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;body&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;html&gt;</span></pre></td></tr></table></figure>
+
+<p>check.jsp</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&lt;%@ page contentType&#x3D;&quot;text&#x2F;html;charset&#x3D;UTF-8&quot; language&#x3D;&quot;java&quot; %&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    &lt;title&gt;Title&lt;&#x2F;title&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;head&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">        &lt;%</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">            request.setCharacterEncoding(&quot;utf-8&quot;);&#x2F;&#x2F;设置编码</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">            String name&#x3D;request.getParameter(&quot;username&quot;);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">            String pwd&#x3D;request.getParameter(&quot;userpwd&quot;);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">            if(name.equals(&quot;zs&quot;)&amp;&amp;pwd.equals(&quot;abc&quot;))&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">               &#x2F;&#x2F; 会导致数据丢失</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">                &#x2F;&#x2F; response.sendRedirect(&quot;success.jsp&quot;);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">                &#x2F;&#x2F; 换成请求转发</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">                request.getRequestDispatcher(&quot;success.jsp&quot;).forward(request,response);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">                &#x2F;&#x2F;页面跳转：请求转发，可以获取到数据，地址栏没有改变（仍然保留转发时的地址栏）</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">            &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">            else &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">                out.print(&quot;账号密码错误&quot;);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">            &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">        %&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;body&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;html&gt;</span></pre></td></tr></table></figure>
+
+<p>success.jsp</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&lt;%@ page contentType&#x3D;&quot;text&#x2F;html;charset&#x3D;UTF-8&quot; language&#x3D;&quot;java&quot; %&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    &lt;title&gt;Title&lt;&#x2F;title&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;head&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">登录成功！&lt;&#x2F;br&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">欢迎您</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">&lt;%</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    String name&#x3D;request.getParameter(&quot;username&quot;);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">    out.print(name);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">%&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;body&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;html&gt;</span></pre></td></tr></table></figure>
+
+<h2 id="3-请求转发和重定向的区别"><a href="#3-请求转发和重定向的区别" class="headerlink" title="3.请求转发和重定向的区别"></a>3.请求转发和重定向的区别</h2><p>请求转发：<code>getRequestDispatcher(&quot;success.jsp&quot;).forward(request,response);</code></p>
+<p>重定向：<code>response.sendRedirect(&quot;success.jsp&quot;);</code>            </p>
+<h5 id="请求转发-重定向"><a href="#请求转发-重定向" class="headerlink" title="请求转发                                重定向"></a>请求转发                                重定向</h5><p>​    地址栏是否改变                           不改变                          改变</p>
+<p>​    是否保留第一次请求时的数据            保留                        不保留</p>
+<p>​    请求的次数                            1次                           2次</p>
+<p>​    跳转发生的位置                           服务端                      客户端</p>
+<h3 id="请求转发："><a href="#请求转发：" class="headerlink" title="请求转发："></a>请求转发：</h3><p>在服务器内部跳转，可以携带数据</p>
+<h3 id=""><a href="#" class="headerlink" title=""></a><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="C:\Users\60993\AppData\Roaming\Typora\typora-user-images\1555738079345.png" alt="1555738079345" title="">
+                </div>
+                <div class="image-caption">1555738079345</div>
+            </figure></h3><h3 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h3><p>返回给客户端让客户端重新发起跳转，不携带数据</p>
+<p>原因：重定向两次请求，而request请求的作用域在当前一次请求有效，第二次请求不会有第一次请求的参数，所以数据丢失</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="C:\Users\60993\AppData\Roaming\Typora\typora-user-images\1555738113918.png" alt="1555738113918" title="">
+                </div>
+                <div class="image-caption">1555738113918</div>
+            </figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="C:\Users\60993\AppData\Roaming\Typora\typora-user-images\1555738671040.png" alt="1555738671040" title="">
+                </div>
+                <div class="image-caption">1555738671040</div>
+            </figure>
+
+<h4 id="例："><a href="#例：" class="headerlink" title="例："></a>例：</h4><p>​    张三去银行办理业务：</p>
+<h6 id="请求转发：-1"><a href="#请求转发：-1" class="headerlink" title="请求转发："></a>请求转发：</h6><p>​    张三（客户端）   ——&gt;        【服务窗口A（服务端）——&gt;服务窗口B】          （【】内视为一个服务端）</p>
+<p>​    在这里张三只找了A，只有一次请求，A自己去找B将事情解决，所以地址栏不变</p>
+<h6 id="重定向："><a href="#重定向：" class="headerlink" title="重定向："></a>重定向：</h6><p>​    张三（客户端）   ——&gt;        服务窗口A（服务端）——&gt;去找服务窗口B</p>
+<p>​    张三（客户端）   ——&gt;        服务窗口B（服务端）</p>
+<p>​    在这里张三找了两个人，有两次请求，所以地址栏会改变</p>
+<h2 id="4-session和Cookie"><a href="#4-session和Cookie" class="headerlink" title="4.session和Cookie"></a>4.session和Cookie</h2><p>session(服务端)、Cookie(客户端，不是内置对象)：Cookie是客户端对象，却是由服务端产生，再发送给客户端保存</p>
+<p>Cookie是本地缓存。</p>
+<p>​    本地缓存的作用：可以提高访问效率，但是安全性较差，因为还可以保存密码</p>
+<p>​    例如在网上看电影：客户端 —&gt;服务端（hello.mp4）</p>
+<p>​    第一次客户端向服务端请求hello.mp4观看。服务端将电影放进Cookie里发送给客户端。下次    观看只需从本机观看。</p>
+<p>Cookie：name =value</p>
+<p>Cookie来自<code>java.servlet.http.Cookie</code></p>
+<p><code>public Cookie(String name,String value)</code></p>
+<p><code>String getName()   //获取name</code></p>
+<p><code>String getValue()    //获取value</code></p>
+<p><code>void setMaxage(int expiry)     //设置最大有效期（秒）</code></p>
+<p>服务端发送Cookie给客户端：</p>
+<h6 id="步骤："><a href="#步骤：" class="headerlink" title="步骤："></a>步骤：</h6><p>服务端准备Cookie：</p>
+<p><code>response.addCookie(Cookie cookie);</code></p>
+<p>页面跳转（转发，重定向）;</p>
+<p>客户端获取:</p>
+<p><code>cookie:request.getCookies();     //获取cookie必须全部获取，不可以获取其中一个</code></p>
+<h4 id="示例代码："><a href="#示例代码：" class="headerlink" title="示例代码："></a>示例代码：</h4><p>addCookie.jsp</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&lt;%@ page contentType&#x3D;&quot;text&#x2F;html;charset&#x3D;UTF-8&quot; language&#x3D;&quot;java&quot; %&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    &lt;title&gt;Title&lt;&#x2F;title&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;head&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">        &lt;%</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">            &#x2F;&#x2F;服务端</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">            Cookie cookie1&#x3D;new Cookie(&quot;name&quot;,&quot;zs&quot;);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">            Cookie cookie2&#x3D;new Cookie(&quot;pwd&quot;,&quot;abc&quot;);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">            response.addCookie(cookie1);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">            response.addCookie(cookie2);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">            response.sendRedirect(&quot;result.jsp&quot;);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">        %&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;body&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;html&gt;</span></pre></td></tr></table></figure>
+
+<p>result.jsp</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&lt;%@ page contentType&#x3D;&quot;text&#x2F;html;charset&#x3D;UTF-8&quot; language&#x3D;&quot;java&quot; %&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    &lt;title&gt;Title&lt;&#x2F;title&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;head&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">        &lt;%</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">            Cookie[] cookies&#x3D;request.getCookies();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">            for (Cookie cookie:cookies)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">                out.print(cookie.getName()+&quot;----&quot;+cookie.getValue());</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">            &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">        %&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;body&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;html&gt;</span></pre></td></tr></table></figure>
+
+<h5 id="结果："><a href="#结果：" class="headerlink" title="结果："></a>结果：</h5><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="C:\Users\60993\AppData\Roaming\Typora\typora-user-images\1555742270529.png" alt="1555742270529" title="">
+                </div>
+                <div class="image-caption">1555742270529</div>
+            </figure>
+
+<p>通过结果发现除了自己设置的cookie，还有一个name为JSESSIONID的cookie</p>
+<p>session在一个浏览器窗口中是唯一的，把数据存储在tomcat服务器中，这个数据就是session</p>
+<p>session存储在cookie中</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="黄阳">
+            黄阳
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/servlet/" rel="tag">servlet</a></li></ul>
+
+
+            
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/07/02/Hibernate/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Hibernate入门</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/07/01/JSP%E9%A1%B5%E9%9D%A2%E5%85%83%E7%B4%A0%E5%8F%8Arequest%E5%AF%B9%E8%B1%A1/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">JSP页面元素及request对象</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>黄阳 &copy; 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" target="_blank" rel="noopener" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: false, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'NotFoundHY';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'NotFoundHY';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

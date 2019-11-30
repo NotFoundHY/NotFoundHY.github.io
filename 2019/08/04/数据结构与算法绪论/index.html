@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>数据结构与算法绪论 | NotFoundHY</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="数据结构">
+    <meta name="description" content="数据结构与算法绪论如何表示和存储一组电话号码的所有信息———-数据结构设计 如何实现对电话信息的快速查找———————-算法设计 一、数据结构的逻辑结构和物理结构1.逻辑结构：（1）集合结构 : 集合结构中的元素关系，除了同属于一个集合这个关系以外，再无其他关系。 （2）线性结构：线性结构中，元素间的关系就是一对一，顾名思义，一条线性的结构。 （3）树形结构：树形结构中，元素间的关系就是一对多，一">
+<meta name="keywords" content="数据结构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构与算法绪论">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;08&#x2F;04&#x2F;%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E7%BB%AA%E8%AE%BA&#x2F;index.html">
+<meta property="og:site_name" content="NotFoundHY">
+<meta property="og:description" content="数据结构与算法绪论如何表示和存储一组电话号码的所有信息———-数据结构设计 如何实现对电话信息的快速查找———————-算法设计 一、数据结构的逻辑结构和物理结构1.逻辑结构：（1）集合结构 : 集合结构中的元素关系，除了同属于一个集合这个关系以外，再无其他关系。 （2）线性结构：线性结构中，元素间的关系就是一对一，顾名思义，一条线性的结构。 （3）树形结构：树形结构中，元素间的关系就是一对多，一">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;08&#x2F;04&#x2F;e6peeI.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;08&#x2F;04&#x2F;ey6Zh4.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;08&#x2F;04&#x2F;e6pNT0.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;08&#x2F;04&#x2F;e6pBpF.png">
+<meta property="og:updated_time" content="2019-08-04T08:00:09.314Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2019&#x2F;08&#x2F;04&#x2F;e6peeI.png">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">黄阳</h5>
+          <a href="mailto:609936180@qq.com" target="_blank" rel="noopener" title="609936180@qq.com" class="mail">609936180@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">数据结构与算法绪论</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">数据结构与算法绪论</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-08-03T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2019-08-04
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#数据结构与算法绪论"><span class="post-toc-number">1.</span> <span class="post-toc-text">数据结构与算法绪论</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#一、数据结构的逻辑结构和物理结构"><span class="post-toc-number">1.0.0.1.</span> <span class="post-toc-text">一、数据结构的逻辑结构和物理结构</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-逻辑结构："><span class="post-toc-number">1.0.0.2.</span> <span class="post-toc-text">1.逻辑结构：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-物理结构："><span class="post-toc-number">1.0.0.3.</span> <span class="post-toc-text">2.物理结构：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#二、数据结构相关术语"><span class="post-toc-number">1.0.0.4.</span> <span class="post-toc-text">二、数据结构相关术语</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#三、算法介绍"><span class="post-toc-number">1.0.0.5.</span> <span class="post-toc-text">三、算法介绍</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-算法的概念"><span class="post-toc-number">1.0.0.6.</span> <span class="post-toc-text">1.算法的概念</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-算法具有的5个特性"><span class="post-toc-number">1.0.0.7.</span> <span class="post-toc-text">2.算法具有的5个特性</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-复杂度分析"><span class="post-toc-number">1.0.0.8.</span> <span class="post-toc-text">3.复杂度分析</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#（1）好的算法应该具有的特性"><span class="post-toc-number">1.0.0.8.1.</span> <span class="post-toc-text">（1）好的算法应该具有的特性</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-时间复杂度"><span class="post-toc-number">1.0.0.8.2.</span> <span class="post-toc-text">(2)时间复杂度</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#null"><span class="post-toc-number">1.0.0.8.3.</span> <span class="post-toc-text">
+                
+                    
+                    
+                
+                
+            </span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-数据结构与算法绪论"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">数据结构与算法绪论</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-08-04 00:00:00" datetime="2019-08-03T16:00:00.000Z"  itemprop="datePublished">2019-08-04</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="数据结构与算法绪论"><a href="#数据结构与算法绪论" class="headerlink" title="数据结构与算法绪论"></a>数据结构与算法绪论</h1><p>如何表示和存储一组电话号码的所有信息———-数据结构设计</p>
+<p>如何实现对电话信息的快速查找———————-算法设计</p>
+<h4 id="一、数据结构的逻辑结构和物理结构"><a href="#一、数据结构的逻辑结构和物理结构" class="headerlink" title="一、数据结构的逻辑结构和物理结构"></a>一、数据结构的逻辑结构和物理结构</h4><h4 id="1-逻辑结构："><a href="#1-逻辑结构：" class="headerlink" title="1.逻辑结构："></a>1.逻辑结构：</h4><p>（1）集合结构 : 集合结构中的元素关系，除了同属于一个集合这个关系以外，再无其他关系。</p>
+<p>（2）线性结构：线性结构中，元素间的关系就是一对一，顾名思义，一条线性的结构。</p>
+<p>（3）树形结构：树形结构中，元素间的关系就是一对多，一颗大叔，伸展出的枝叶，也是类金字塔形。</p>
+<p>（4）图形结构：图形结构中，元素间的关系就是多对多，举例：一个人可以通过6个人间接认识到世界上的每一个人。类蛛网形。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://s2.ax1x.com/2019/08/04/e6peeI.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h4 id="2-物理结构："><a href="#2-物理结构：" class="headerlink" title="2.物理结构："></a>2.物理结构：</h4><p>（1）顺序存储结构：是把数据元素存放在地址连续存储单元里，其数据间的逻辑关系和物理关系是一致的(通常借助数组实现)</p>
+<p>（2）链式存储结构：既然有这种结构就是跟顺序存储结构有了对比，那就是其中逻辑关系和物理关系没有多大的关系因为其中的数据元素会产生变化。也比顺序存储结构更加灵活(通常借助指针实现)</p>
+<h4 id="二、数据结构相关术语"><a href="#二、数据结构相关术语" class="headerlink" title="二、数据结构相关术语"></a>二、数据结构相关术语</h4><ul>
+<li><p>数据(Data)</p>
+<p>是对客观事物的符号表示，能被计算机识别</p>
+</li>
+<li><p>数据元素(Data Element)</p>
+<p>是数据的基本单位，是数据中的一个“个体” ，通常在计算机程序中作为一个整体进行考虑和处理。一个数据元素可以由多个数据项组成</p>
+</li>
+<li><p>数据项(Data Item)</p>
+<p>是数据结构讨论的最小单位。例如：一本书的书目信息是一个数据元素，那么书目信息中的每一项（例如书名、作者等）则是数据项</p>
+</li>
+<li><p>数据对象(Data Object)</p>
+<p>是具有相同性质的数据元素的集合，是数据的一个子集 </p>
+</li>
+<li><p>数据结构(Data Structure)：</p>
+<p>带结构的数据元素的集合</p>
+<p>用集合的形式描述，数据结构是一个二元数组：<br>$$<br>Data  Structure = (D , R)<br>$$<br>其中：D是数据元素的有限集，R是D上关系的有限集</p>
+<p>简而言之，数据元素和其相互关系称为数据结构</p>
+</li>
+</ul>
+<p>他们的关系如下图所示：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://s2.ax1x.com/2019/08/04/ey6Zh4.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+
+
+<h4 id="三、算法介绍"><a href="#三、算法介绍" class="headerlink" title="三、算法介绍"></a>三、算法介绍</h4><h4 id="1-算法的概念"><a href="#1-算法的概念" class="headerlink" title="1.算法的概念"></a>1.算法的概念</h4><p>​    是对特定问题的求解步骤的一种描述</p>
+<h4 id="2-算法具有的5个特性"><a href="#2-算法具有的5个特性" class="headerlink" title="2.算法具有的5个特性"></a>2.算法具有的5个特性</h4><ul>
+<li>有穷性：一个算法必须总是在执行有穷步之后结束，且每一步都可在有穷时间内完成</li>
+<li>确定性：算法中的每一条指令都必须由明确的含义，无歧义</li>
+<li>可行性：一个算法是能行的，即算法中的描述的操作都是可以通过已经实现的基本运算执行有限次来实现的</li>
+<li>输入：有零个或多个外部量作为算法的输入</li>
+<li>输出：算法至少有一个输出</li>
+</ul>
+<h4 id="3-复杂度分析"><a href="#3-复杂度分析" class="headerlink" title="3.复杂度分析"></a>3.复杂度分析</h4><h5 id="（1）好的算法应该具有的特性"><a href="#（1）好的算法应该具有的特性" class="headerlink" title="（1）好的算法应该具有的特性"></a>（1）好的算法应该具有的特性</h5><ul>
+<li>正确性</li>
+<li>可读性</li>
+<li>健壮性</li>
+<li>高效性</li>
+</ul>
+<h5 id="2-时间复杂度"><a href="#2-时间复杂度" class="headerlink" title="(2)时间复杂度"></a>(2)时间复杂度</h5><p>时间频度：一个算法中的语句执行次数（计算步）称为语句频度或时间频度，记为T(n)</p>
+<p>时间复杂度：<br>$$<br>T(n) = O(f(n))<br>$$<br>f(n)表示执行与算法优劣和问题规模有关的执行次数</p>
+<p>O()表示一种运算符号，例如+-*/。作用是去除其他低阶项，包括与最高项相乘的常数，只保留最高项，例如<br>$$<br>f(n) = 2n^2+1,O(f(n))=O(n^2)<br>$$<br>例如一个遍历数组的代码:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">for (int i &#x3D; 0; i &lt; n; i++) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    方法</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<p>for循环一共执行n次,所以<br>$$<br>T(n) = O(n)<br>$$<br>常见时间复杂度</p>
+<h5 id=""><a href="#" class="headerlink" title=""></a><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://s2.ax1x.com/2019/08/04/e6pNT0.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></h5><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://s2.ax1x.com/2019/08/04/e6pBpF.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="黄阳">
+            黄阳
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li></ul>
+
+
+            
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/08/08/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%85%A5%E9%97%A8%EF%BC%881%EF%BC%89/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Java多线程入门（1）</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/08/02/%E5%8C%85%E8%A3%85%E7%B1%BB/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">包装类</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>黄阳 &copy; 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" target="_blank" rel="noopener" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: false, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'NotFoundHY';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'NotFoundHY';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

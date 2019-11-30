@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Hibernate入门 | NotFoundHY</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Hibernate">
+    <meta name="description" content="1.Hibernate介绍（1）简介Hibernate 是由 Gavin King 于 2001 年创建的开放源代码的对象关系框架。它强大且高效的构建具有关系对象持久性和查询服务的 Java 应用程序。 Hibernate 将 Java 类映射到数据库表中，从 Java 数据类型中映射到 SQL 数据类型中，并把开发人员从 95% 的公共数据持续性编程工作中解放出来。 Hibernate 是传统">
+<meta name="keywords" content="Hibernate">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hibernate入门">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;07&#x2F;02&#x2F;Hibernate&#x2F;index.html">
+<meta property="og:site_name" content="NotFoundHY">
+<meta property="og:description" content="1.Hibernate介绍（1）简介Hibernate 是由 Gavin King 于 2001 年创建的开放源代码的对象关系框架。它强大且高效的构建具有关系对象持久性和查询服务的 Java 应用程序。 Hibernate 将 Java 类映射到数据库表中，从 Java 数据类型中映射到 SQL 数据类型中，并把开发人员从 95% 的公共数据持续性编程工作中解放出来。 Hibernate 是传统">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;images2017.cnblogs.com&#x2F;blog&#x2F;1261992&#x2F;201711&#x2F;1261992-20171120124933883-1092983689.png">
+<meta property="og:updated_time" content="2019-07-02T06:40:07.672Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;images2017.cnblogs.com&#x2F;blog&#x2F;1261992&#x2F;201711&#x2F;1261992-20171120124933883-1092983689.png">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">黄阳</h5>
+          <a href="mailto:609936180@qq.com" target="_blank" rel="noopener" title="609936180@qq.com" class="mail">609936180@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Hibernate入门</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Hibernate入门</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-07-01T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2019-07-02
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-Hibernate介绍"><span class="post-toc-number">1.</span> <span class="post-toc-text">1.Hibernate介绍</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#（1）简介"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">（1）简介</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#（2）支持的数据库"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">（2）支持的数据库</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#（3）支持的技术"><span class="post-toc-number">1.0.3.</span> <span class="post-toc-text">（3）支持的技术</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#（4）ORM原理"><span class="post-toc-number">1.0.4.</span> <span class="post-toc-text">（4）ORM原理</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-Hibernate配置"><span class="post-toc-number">2.</span> <span class="post-toc-text">2.Hibernate配置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-Hibernate-API详解"><span class="post-toc-number">3.</span> <span class="post-toc-text">3.Hibernate API详解</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-Hibernate简单封装"><span class="post-toc-number">4.</span> <span class="post-toc-text">4.Hibernate简单封装</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Hibernate"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Hibernate入门</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-07-02 00:00:00" datetime="2019-07-01T16:00:00.000Z"  itemprop="datePublished">2019-07-02</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="1-Hibernate介绍"><a href="#1-Hibernate介绍" class="headerlink" title="1.Hibernate介绍"></a>1.Hibernate介绍</h3><h5 id="（1）简介"><a href="#（1）简介" class="headerlink" title="（1）简介"></a>（1）简介</h5><p>Hibernate 是由 Gavin King 于 2001 年创建的开放源代码的对象关系框架。它强大且高效的构建具有关系对象持久性和查询服务的 Java 应用程序。</p>
+<p>Hibernate 将 Java 类映射到数据库表中，从 Java 数据类型中映射到 SQL 数据类型中，并把开发人员从 95% 的公共数据持续性编程工作中解放出来。</p>
+<p>Hibernate 是传统 Java 对象和数据库服务器之间的桥梁，用来处理基于 O/R 映射机制和模式的那些对象。Hibernate 优势</p>
+<ul>
+<li>Hibernate 使用 XML 文件来处理映射 Java 类别到数据库表格中，并且不用编写任何代码。</li>
+<li>为在数据库中直接储存和检索 Java 对象提供简单的 APIs。</li>
+<li>如果在数据库中或任何其它表格中出现变化，那么仅需要改变 XML 文件属性。</li>
+<li>抽象不熟悉的 SQL 类型，并为我们提供工作中所熟悉的 Java 对象。</li>
+<li>Hibernate 不需要应用程序服务器来操作。</li>
+<li>操控你数据库中对象复杂的关联。</li>
+<li>最小化与访问数据库的智能提取策略。</li>
+<li>提供简单的数据询问。</li>
+</ul>
+<h5 id="（2）支持的数据库"><a href="#（2）支持的数据库" class="headerlink" title="（2）支持的数据库"></a>（2）支持的数据库</h5><p>Hibernate 支持几乎所有的主要 RDBMS。以下是一些由 Hibernate 所支持的数据库引擎。</p>
+<ul>
+<li>HSQL Database Engine</li>
+<li>DB2/NT</li>
+<li>MySQL</li>
+<li>PostgreSQL</li>
+<li>FrontBase</li>
+<li>Oracle</li>
+<li>Microsoft SQL Server Database</li>
+<li>Sybase SQL Server</li>
+<li>Informix Dynamic Server</li>
+</ul>
+<h5 id="（3）支持的技术"><a href="#（3）支持的技术" class="headerlink" title="（3）支持的技术"></a>（3）支持的技术</h5><p>Hibernate 支持多种多样的其它技术，包括以下：</p>
+<ul>
+<li>XDoclet Spring</li>
+<li>J2EE</li>
+<li>Eclipse plug-ins</li>
+<li>Maven</li>
+</ul>
+<h5 id="（4）ORM原理"><a href="#（4）ORM原理" class="headerlink" title="（4）ORM原理"></a>（4）ORM原理</h5><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://images2017.cnblogs.com/blog/1261992/201711/1261992-20171120124933883-1092983689.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h3 id="2-Hibernate配置"><a href="#2-Hibernate配置" class="headerlink" title="2.Hibernate配置"></a>2.Hibernate配置</h3><p>（1）Hibernate.cfg.xml文件配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&#39;1.0&#39; encoding&#x3D;&#39;utf-8&#39;?&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE hibernate-configuration PUBLIC</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">        &quot;-&#x2F;&#x2F;Hibernate&#x2F;Hibernate Configuration DTD&#x2F;&#x2F;EN&quot;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">        &quot;http:&#x2F;&#x2F;www.hibernate.org&#x2F;dtd&#x2F;hibernate-configuration-3.0.dtd&quot;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">&lt;hibernate-configuration&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    &lt;session-factory&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">        &lt;!-- 方言（不同数据库中，sql语句略有区别，指定方言可以让hibernate生成sql语句时针对数据库的方言生成），便于hibernate对象操作转化为合适的数据库语句--&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">        &lt;property name&#x3D;&quot;hibernate.dialect&quot;&gt;org.hibernate.dialect.MySQL5Dialect&lt;&#x2F;property&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">        &lt;!-- 配置数据库连接--&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">        &lt;property name&#x3D;&quot;connection.url&quot;&gt;jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;user?serverTimezone&#x3D;UTC&amp;useUnicode&#x3D;true&amp;characterEncoding&#x3D;UTF-8&lt;&#x2F;property&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">        &lt;!-- 配置数据库驱动文件--&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">        &lt;property name&#x3D;&quot;connection.driver_class&quot;&gt;com.mysql.cj.jdbc.Driver&lt;&#x2F;property&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">        &lt;!--数据库用户名  --&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">        &lt;property name&#x3D;&quot;connection.username&quot;&gt;root&lt;&#x2F;property&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">        &lt;!--数据库密码  --&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">       &lt;property name&#x3D;&quot;connection.password&quot;&gt;root&lt;&#x2F;property&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">        &lt;!--是否显示sql语句，sql一般会很难看  默认为false--&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">        &lt;property name&#x3D;&quot;show_sql&quot;&gt;true&lt;&#x2F;property&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">        &lt;!--下一个层级的映射文件，用来配置bean对象与数据表之间的关系  --&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">        &lt;mapping resource&#x3D;&quot;com&#x2F;example&#x2F;UserInfoEntity.hbm.xml&quot;&#x2F;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">    &lt;&#x2F;session-factory&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;hibernate-configuration&gt;</span></pre></td></tr></table></figure>
+
+<p>（2）配置表与实体对象的关系配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&#39;1.0&#39; encoding&#x3D;&#39;utf-8&#39;?&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE hibernate-mapping PUBLIC</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    &quot;-&#x2F;&#x2F;Hibernate&#x2F;Hibernate Mapping DTD 3.0&#x2F;&#x2F;EN&quot;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    &quot;http:&#x2F;&#x2F;www.hibernate.org&#x2F;dtd&#x2F;hibernate-mapping-3.0.dtd&quot;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">&lt;!-- package属性：填写一个包名，在后面的属性配置中可以直接写简答类名--&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">&lt;hibernate-mapping package&#x3D;&quot;com.example&quot;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">&lt;!--</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    class元素：配置实体与表的对应关系</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">                name：完整类名</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">                table：数据库表名</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">--&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">    &lt;class name&#x3D;&quot;UserInfoEntity&quot; table&#x3D;&quot;user_info&quot; schema&#x3D;&quot;user&quot;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">        &lt;!--</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">            id;配置主键映射的属性</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">                name：填写主键对应的属性名</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">                column：填写表中的主键列名</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">        --&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">        &lt;id name&#x3D;&quot;id&quot; column&#x3D;&quot;id&quot;&#x2F;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">        &lt;!--</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">            property元素：除id之外的普通属性映射</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">                           name：填写属性名</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">                          column：填写表中对应的列名</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">                          type（可选）：填写列（属性）的类型</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line">                          			  hibernate会自动检测实体的属性类型，建议不填</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line">                                       每个类型有三种填法：java类型|hibernate类型|数据库类型</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line">        --&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line">        &lt;property name&#x3D;&quot;username&quot; column&#x3D;&quot;username&quot;&#x2F;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">28</span></pre></td><td class="code"><pre><span class="line">        &lt;property name&#x3D;&quot;password&quot; column&#x3D;&quot;password&quot;&#x2F;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">29</span></pre></td><td class="code"><pre><span class="line">        &lt;property name&#x3D;&quot;nickname&quot; column&#x3D;&quot;nickname&quot;&#x2F;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">30</span></pre></td><td class="code"><pre><span class="line">        &lt;property name&#x3D;&quot;sex&quot; column&#x3D;&quot;sex&quot;&#x2F;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">31</span></pre></td><td class="code"><pre><span class="line">    &lt;&#x2F;class&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">32</span></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;hibernate-mapping&gt;</span></pre></td></tr></table></figure>
+
+<h3 id="3-Hibernate-API详解"><a href="#3-Hibernate-API详解" class="headerlink" title="3.Hibernate API详解"></a>3.Hibernate API详解</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;1.创建对象，调用空参构造</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">      Configuration conf &#x3D; new Configuration();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">      &#x2F;&#x2F;2.读取指定主配置文件 ---&gt;空参构造，加载src下的hibernate.cfg.xml文件</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">      conf.configure();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">      &#x2F;&#x2F;3.根据配置信息，创建SessionFactory对象</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">      SessionFactory sessionFactory &#x3D; conf.buildSessionFactory();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">      &#x2F;*</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">        &lt;!--SessionFactory功能：用户创建数据库核心对象Session对象的工厂</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">                     简单来说就是功能就是创建session对象</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">               注意：a.sessionFactory  负责保存和使用所有配置信息，消耗内存资源很大</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">                    b.session属于线程安全的对象设计</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">               结论：保证在web项目中，只创建一个sessionFactory对象*&#x2F;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">     &#x2F;&#x2F;4.获得session</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">    &#x2F;&#x2F;打开一个新的session</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">    sessionFactory.openSession();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">    &#x2F;&#x2F;获得一个与线程绑定的session对象</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">    sessionFactory.getCurrentSession();</span></pre></td></tr></table></figure>
+
+<p>session对象功能：表达hibernate框架与数据库之间的连接（会话）</p>
+<p>​                类似于JDBC中的connection对象，还可以完成对数据库中的增删改查</p>
+<p>​                session是hibernate操作数据库的核心对象 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">package test;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">import com.example.UserInfoEntity;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">import org.hibernate.Session;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">import org.hibernate.SessionFactory;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">import org.hibernate.Transaction;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">import org.hibernate.cfg.Configuration;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">public class test &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    public static void main(String [] args) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">        Configuration conf &#x3D; new Configuration().configure();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">        SessionFactory sessionFactory &#x3D; conf.buildSessionFactory();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">        Session session &#x3D; sessionFactory.openSession();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">        Transaction transaction1 &#x3D; session.beginTransaction();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">        &#x2F;&#x2F;增加</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">        &#x2F;*UserInfoEntity u &#x3D; new UserInfoEntity();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">        u.setId(&quot;5&quot;);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">        u.setNickname(&quot;轨迹11&quot;);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">        u.setUsername(&quot;黄阳11&quot;);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">        u.setPassword(&quot;1231&quot;);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">        u.setSex(&quot;男&quot;);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">        session.save(u);*&#x2F;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">        &#x2F;*查询 </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">        UserInfoEntity u &#x3D; session.get(UserInfoEntity.class, &quot;1&quot;);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">        System.out.println(u);*&#x2F;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line">        &#x2F;*修改</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line">        UserInfoEntity u &#x3D; session.get(UserInfoEntity.class, &quot;1&quot;);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line">        u.setNickname(&quot;李四1111&quot;);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line">        session.update(u);*&#x2F;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">28</span></pre></td><td class="code"><pre><span class="line">        &#x2F;*删除</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">29</span></pre></td><td class="code"><pre><span class="line">        UserInfoEntity u &#x3D; session.get(UserInfoEntity.class, &quot;1&quot;);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">30</span></pre></td><td class="code"><pre><span class="line">        session.delete(u);*&#x2F;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">31</span></pre></td><td class="code"><pre><span class="line">        transaction1.commit();&#x2F;&#x2F;提交事务</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">32</span></pre></td><td class="code"><pre><span class="line">        session.close();&#x2F;&#x2F;释放资源</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">33</span></pre></td><td class="code"><pre><span class="line">        sessionFactory.close();&#x2F;&#x2F;释放资源</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">34</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">35</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<p>总结基本步骤：</p>
+<ul>
+<li>获得configuration对象</li>
+<li>获得sessionFactory对象</li>
+<li>获得session对象</li>
+<li>获得transaction对象并开启事务</li>
+<li>执行数据操作（增删改查）</li>
+<li>提交事务</li>
+<li>释放资源</li>
+</ul>
+<h3 id="4-Hibernate简单封装"><a href="#4-Hibernate简单封装" class="headerlink" title="4.Hibernate简单封装"></a>4.Hibernate简单封装</h3><p><code>package Utils;</code></p>
+<p><code>import org.hibernate.Session;</code><br><code>import org.hibernate.SessionFactory;</code><br><code>import org.hibernate.cfg.Configuration;</code></p>
+<p><code>public class hibernateUtils {</code><br>    <code>private static SessionFactory sessionFactory;</code><br>    <code>static {</code><br>        <code>Configuration conf = new Configuration().configure();</code><br>       <code>sessionFactory = conf.buildSessionFactory();</code><br>    <code>}</code><br>    <code>//获得全新session</code><br>    <code>public static Session openSession(){</code><br>        <code>Session session = sessionFactory.openSession();</code><br>        <code>return session;</code><br>    <code>}</code><br>    <code>//获得与线程绑定的session</code><br>    <code>public static Session getCurrentSession(){</code><br>        <code>Session session = sessionFactory.getCurrentSession();</code><br>        <code>return session;</code><br>    <code>}</code><br>    <code>public static void main(String [] args) {</code><br>        <code>System.out.println(hibernateUtils.openSession());</code><br>    <code>}</code><br><code>}</code></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="黄阳">
+            黄阳
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hibernate/" rel="tag">Hibernate</a></li></ul>
+
+
+            
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/07/22/%E5%8D%95%E5%90%91%E9%93%BE%E8%A1%A8/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">单向链表</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/07/01/response%E5%93%8D%E5%BA%94%E5%AF%B9%E8%B1%A1/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">response响应对象</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>黄阳 &copy; 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" target="_blank" rel="noopener" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: false, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'NotFoundHY';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'NotFoundHY';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

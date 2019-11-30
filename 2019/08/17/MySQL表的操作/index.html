@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>MySQL表的操作（1） | NotFoundHY</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="数据表">
+    <meta name="description" content="MySQL表的操作（1）一、表的创建和修改等创建表： 1CREATE TABLE 表名 (2    属性名 数据类型 [完整约束条件],3    属性名 数据类型 [完整约束条件],4    ...5    ...6    属性名 数据类型 [完整约束条件]7);  例如创建学生表： 1create table student(id char(7) not null,2    name char(">
+<meta name="keywords" content="数据表">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL表的操作（1）">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;08&#x2F;17&#x2F;MySQL%E8%A1%A8%E7%9A%84%E6%93%8D%E4%BD%9C&#x2F;index.html">
+<meta property="og:site_name" content="NotFoundHY">
+<meta property="og:description" content="MySQL表的操作（1）一、表的创建和修改等创建表： 1CREATE TABLE 表名 (2    属性名 数据类型 [完整约束条件],3    属性名 数据类型 [完整约束条件],4    ...5    ...6    属性名 数据类型 [完整约束条件]7);  例如创建学生表： 1create table student(id char(7) not null,2    name char(">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-08-17T12:32:29.853Z">
+<meta name="twitter:card" content="summary">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">黄阳</h5>
+          <a href="mailto:609936180@qq.com" target="_blank" rel="noopener" title="609936180@qq.com" class="mail">609936180@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">MySQL表的操作（1）</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">MySQL表的操作（1）</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-08-16T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2019-08-17
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#MySQL表的操作（1）"><span class="post-toc-number">1.</span> <span class="post-toc-text">MySQL表的操作（1）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#一、表的创建和修改等"><span class="post-toc-number">1.0.0.1.</span> <span class="post-toc-text">一、表的创建和修改等</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#二、插入数据"><span class="post-toc-number">1.0.0.2.</span> <span class="post-toc-text">二、插入数据</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#1-为表的所有字段插入数据"><span class="post-toc-number">1.0.0.2.0.1.</span> <span class="post-toc-text">1.为表的所有字段插入数据</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#2-为表的指定字段插入数据"><span class="post-toc-number">1.0.0.2.0.2.</span> <span class="post-toc-text">2.为表的指定字段插入数据</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#3-同时插入多条记录"><span class="post-toc-number">1.0.0.2.0.3.</span> <span class="post-toc-text">3.同时插入多条记录</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#三、修改数据"><span class="post-toc-number">1.0.0.3.</span> <span class="post-toc-text">三、修改数据</span></a></li></ol></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-MySQL表的操作"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">MySQL表的操作（1）</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-08-17 00:00:00" datetime="2019-08-16T16:00:00.000Z"  itemprop="datePublished">2019-08-17</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="MySQL表的操作（1）"><a href="#MySQL表的操作（1）" class="headerlink" title="MySQL表的操作（1）"></a>MySQL表的操作（1）</h1><h4 id="一、表的创建和修改等"><a href="#一、表的创建和修改等" class="headerlink" title="一、表的创建和修改等"></a>一、表的创建和修改等</h4><p>创建表：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">CREATE TABLE 表名 (</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    属性名 数据类型 [完整约束条件],</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    属性名 数据类型 [完整约束条件],</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    ...</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    ...</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    属性名 数据类型 [完整约束条件]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">);</span></pre></td></tr></table></figure>
+
+<p>例如创建学生表：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">create table student(id char(7) not null,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    name char(8) not null,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    sex char(2) not null,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    age int,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    sctime date,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    major varchar(20) ,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    primary key(id)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    ）default charset&#x3D;utf8;</span></pre></td></tr></table></figure>
+
+<p>完整性约束条件表：</p>
+<table>
+<thead>
+<tr>
+<th align="left">约束条件</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">PRIMARY KEY</td>
+<td>标识该属性为该表的主键，可以唯一的标识对应的元组</td>
+</tr>
+<tr>
+<td align="left">FOREIGN KEY</td>
+<td>标识该属性为该表的外键，是与之联系某表的主键</td>
+</tr>
+<tr>
+<td align="left">NOT NULL</td>
+<td>标识该属性不能为空</td>
+</tr>
+<tr>
+<td align="left">UNIQUE</td>
+<td>标识该属性的值是唯一的</td>
+</tr>
+<tr>
+<td align="left">AUTO_INCREMENT</td>
+<td>标识该属性的值是自动增加，这是MySQL的SQL语句的特色</td>
+</tr>
+<tr>
+<td align="left">DEFAULT</td>
+<td>为该属性设置默认值</td>
+</tr>
+</tbody></table>
+<p>修改表示例：</p>
+<p>（1）修改表名：</p>
+<p>​    ALTER TABLE 旧表名 RENAME 新表名;</p>
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">alter table student rename students;</span></pre></td></tr></table></figure>
+
+<p>（2）修改字段的数据类型</p>
+<p>​    ALTER TABLE 表名 MODIFY 属性名 数据类型;</p>
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">alter table student modify name varchar(50);</span></pre></td></tr></table></figure>
+
+<p>（3）修改字段名：</p>
+<p>​    ALTER TABLE 表名 CHANGE 旧属性名 新属性名 新数据类型;</p>
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">alter table students change id stu_id int;</span></pre></td></tr></table></figure>
+
+<p>修改过后：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">+--------+-------------+------+-----+---------+-------+</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">| Field  | Type        | Null | Key | Default | Extra |</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">+--------+-------------+------+-----+---------+-------+</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">| stu_id | int(11)     | NO   | PRI | 0       |       |</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">| name   | varchar(50) | YES  |     | NULL    |       |</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">| sex    | char(2)     | NO   |     | NULL    |       |</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">| age    | int(11)     | YES  |     | NULL    |       |</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">| sctime | date        | YES  |     | NULL    |       |</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">| major  | varchar(20) | YES  |     | NULL    |       |</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">+--------+-------------+------+-----+---------+-------+</span></pre></td></tr></table></figure>
+
+<p>（4）增加字段</p>
+<p>​    ALTER TABLE 表名 ADD 属性名1 数据类型 [完整性约束条件] [FIRST | AFTER 属性名2];</p>
+<p>　　其中，“属性名1”参数指需要增加的字段的名称；“FIRST”参数是可选参数，其作用是将新增字段设置为表的第一个字段；“AFTER”参数也是可选的参数，其作用是将新增字段添加到“属性名2”后面；“属性名2”当然就是指表中已经有的字段</p>
+<p>示例：</p>
+<p>​    添加老师字段在课程名之后</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">alter table course add teacher varchar(10) after cname;</span></pre></td></tr></table></figure>
+
+<p>(4)删除字段</p>
+<p>​    ALTER TABLE 表名 DROP 属性名;</p>
+<p>示例：</p>
+<p>删除students的年龄字段</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">alter table students drop age;</span></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">describe students;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">+--------+-------------+------+-----+---------+-------+</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">| Field  | Type        | Null | Key | Default | Extra |</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">+--------+-------------+------+-----+---------+-------+</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">| stu_id | int(11)     | NO   | PRI | 0       |       |</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">| name   | varchar(50) | YES  |     | NULL    |       |</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">| sex    | char(2)     | NO   |     | NULL    |       |</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">| sctime | date        | YES  |     | NULL    |       |</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">| major  | varchar(20) | YES  |     | NULL    |       |</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">+--------+-------------+------+-----+---------+-------+</span></pre></td></tr></table></figure>
+
+<h4 id="二、插入数据"><a href="#二、插入数据" class="headerlink" title="二、插入数据"></a>二、插入数据</h4><h6 id="1-为表的所有字段插入数据"><a href="#1-为表的所有字段插入数据" class="headerlink" title="1.为表的所有字段插入数据"></a>1.为表的所有字段插入数据</h6><p>格式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">INSERT   INTO  table_name  (  column_list )  VALUES  (  value_list  );</span></pre></td></tr></table></figure>
+
+<p>​    table_name:    指定要插入数据的表名。</p>
+<p>​    column_list:    指定要插入数据的列。</p>
+<p>​    value_list:    指定每个列要插入的数据。  </p>
+<p>【注】  a.    字段列和数据值的数量必须相同。</p>
+<pre><code>b.    向表中的所有字段插入值的方法有两种:    一种是指定所有字段名，另一种是完全不指定字段名。</code></pre><p>示例1：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">insert into students values(1021,&#39;张三&#39;,&#39;男&#39;,NOW(),&#39;计算机科学与技术&#39;);</span></pre></td></tr></table></figure>
+
+<p>示例2：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">insert into students(name,sex,sctime,major,stu_id) values(&#39;李四&#39;,&#39;男&#39;,NOW(),&#39;网络工程&#39;,1022);</span></pre></td></tr></table></figure>
+
+<p>可以看出，插入数据时，不需要按照表定义的顺序插入，只要保证值的顺序与列字段的顺序相同就可以。</p>
+<h6 id="2-为表的指定字段插入数据"><a href="#2-为表的指定字段插入数据" class="headerlink" title="2.为表的指定字段插入数据"></a>2.为表的指定字段插入数据</h6><p>​    只插入了性别和id的信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">insert into students(sex,stu_id) values(&#39;女&#39;,1023);</span></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">+--------+------+-----+------------+------------------+</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">| stu_id | name | sex | sctime     | major            |</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">+--------+------+-----+------------+------------------+</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">|   1021 | 张三 | 男  | 2019-08-17 | 计算机科学与技术 |</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">|   1022 | 李四 | 男  | 2019-08-17 | 网络工程         |</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">|   1023 | NULL | 女  | NULL       | NULL             |</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">+--------+------+-----+------------+------------------+</span></pre></td></tr></table></figure>
+
+<h6 id="3-同时插入多条记录"><a href="#3-同时插入多条记录" class="headerlink" title="3.同时插入多条记录"></a>3.同时插入多条记录</h6><p>​    用  INSERT  语句可以同时向数据表中插入多条记录，插入时指定多个值列表，每个值列表之间用逗号隔开</p>
+<pre><code>语法格式：
+
+ INSERT   INTO  table_name  (  column_list ) 
+
+ VALUES  (  value_list1 ) ,   (  value_list2  ),  ...   ,(  value_listn  );</code></pre><p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">INSERT INTO course (cid,cname,teacher,ctime,cgrade) </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">VALUES  (&#39;1121&#39;,&#39;数据结构&#39;,&#39;张老师&#39;,20,4),(&#39;1122&#39;,&#39;java&#39;,&#39;李老师&#39;,20,2);</span></pre></td></tr></table></figure>
+
+<h4 id="三、修改数据"><a href="#三、修改数据" class="headerlink" title="三、修改数据"></a>三、修改数据</h4><p>格式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">UPDATE  table_name  SET column_name&#x3D;&#39;待修改的数据&#39;  WHERE [限定条件]</span></pre></td></tr></table></figure>
+
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">update course set teacher&#x3D;&#39;mike&#39; where cid&#x3D;1121;</span></pre></td></tr></table></figure>
+
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="黄阳">
+            黄阳
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E8%A1%A8/" rel="tag">数据表</a></li></ul>
+
+
+            
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/08/17/MySQL%E8%A1%A8%E7%9A%84%E6%93%8D%E4%BD%9C%EF%BC%882%EF%BC%89/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">MySQL表的操作（2）</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/08/08/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%85%A5%E9%97%A8%EF%BC%881%EF%BC%89/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Java多线程入门（1）</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>黄阳 &copy; 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" target="_blank" rel="noopener" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: false, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'NotFoundHY';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'NotFoundHY';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>JSP页面元素及request对象 | NotFoundHY</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="jsp">
+    <meta name="description" content="1.jsp页面元素：html、java代码、注释、指令">
+<meta name="keywords" content="jsp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JSP页面元素及request对象">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;07&#x2F;01&#x2F;JSP%E9%A1%B5%E9%9D%A2%E5%85%83%E7%B4%A0%E5%8F%8Arequest%E5%AF%B9%E8%B1%A1&#x2F;index.html">
+<meta property="og:site_name" content="NotFoundHY">
+<meta property="og:description" content="1.jsp页面元素：html、java代码、注释、指令">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="c:&#x2F;Users&#x2F;60993&#x2F;AppData&#x2F;Roaming&#x2F;Typora&#x2F;typora-user-images&#x2F;1558945927713.png">
+<meta property="og:updated_time" content="2019-07-01T08:38:03.358Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:&#x2F;Users&#x2F;60993&#x2F;AppData&#x2F;Roaming&#x2F;Typora&#x2F;typora-user-images&#x2F;1558945927713.png">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">黄阳</h5>
+          <a href="mailto:609936180@qq.com" target="_blank" rel="noopener" title="609936180@qq.com" class="mail">609936180@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">JSP页面元素及request对象</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">JSP页面元素及request对象</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-06-30T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2019-07-01
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#1-jsp页面元素：html、java代码、注释、指令"><span class="post-toc-number">1.</span> <span class="post-toc-text">1.jsp页面元素：html、java代码、注释、指令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#a-脚本Scriptlet"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">a.脚本Scriptlet</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#b-指令"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">b.指令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#page指令属性："><span class="post-toc-number">1.0.2.1.</span> <span class="post-toc-text">page指令属性：</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#c-注释"><span class="post-toc-number">1.0.3.</span> <span class="post-toc-text">c.注释</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-Jsp9大内置对象"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">2.Jsp9大内置对象</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#out："><span class="post-toc-number">1.1.0.0.0.1.</span> <span class="post-toc-text">out：</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#pageContext："><span class="post-toc-number">1.1.0.0.0.2.</span> <span class="post-toc-text">pageContext：</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#request："><span class="post-toc-number">1.1.0.0.0.3.</span> <span class="post-toc-text">request：</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#常见方法："><span class="post-toc-number">1.1.0.0.0.4.</span> <span class="post-toc-text">常见方法：</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#示例：注册页面"><span class="post-toc-number">1.1.0.0.0.5.</span> <span class="post-toc-text">示例：注册页面</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#get和post区别："><span class="post-toc-number">1.1.0.0.0.6.</span> <span class="post-toc-text">get和post区别：</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#response"><span class="post-toc-number">1.1.0.0.0.7.</span> <span class="post-toc-text">response</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#session"><span class="post-toc-number">1.1.0.0.0.8.</span> <span class="post-toc-text">session</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#application"><span class="post-toc-number">1.1.0.0.0.9.</span> <span class="post-toc-text">application</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#config"><span class="post-toc-number">1.1.0.0.0.10.</span> <span class="post-toc-text">config</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#page"><span class="post-toc-number">1.1.0.0.0.11.</span> <span class="post-toc-text">page</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#exception"><span class="post-toc-number">1.1.0.0.0.12.</span> <span class="post-toc-text">exception</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-JSP页面元素及request对象"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">JSP页面元素及request对象</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-07-01 00:00:00" datetime="2019-06-30T16:00:00.000Z"  itemprop="datePublished">2019-07-01</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="1-jsp页面元素：html、java代码、注释、指令"><a href="#1-jsp页面元素：html、java代码、注释、指令" class="headerlink" title="1.jsp页面元素：html、java代码、注释、指令"></a>1.jsp页面元素：html、java代码、注释、指令</h1><a id="more"></a>
+
+<h3 id="a-脚本Scriptlet"><a href="#a-脚本Scriptlet" class="headerlink" title="a.脚本Scriptlet"></a>a.脚本Scriptlet</h3><ol>
+<li><code>&lt;%</code></li>
+</ol>
+<p>​                     <code>局部变量、java语句</code></p>
+<p>​          <code>%&gt;</code></p>
+<p>2.<code>&lt;%!</code></p>
+<p><code>全局变量、java语句</code></p>
+<p><code>%&gt;</code></p>
+<p>3.<code>&lt;%=输出表达式%&gt;</code></p>
+<p><strong>一般而言：修改web.xml 、配置文件、java 需要重启服务器</strong></p>
+<p><strong>修改jsp、html、css、js不需要重启</strong></p>
+<h3 id="b-指令"><a href="#b-指令" class="headerlink" title="b.指令"></a>b.指令</h3><p>page指令：写在开头</p>
+<p>&lt;% page ……..%&gt;</p>
+<h4 id="page指令属性："><a href="#page指令属性：" class="headerlink" title="page指令属性："></a>page指令属性：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&lt;%@ page contentType&#x3D;&quot;text&#x2F;html;charset&#x3D;UTF-8&quot; language&#x3D;&quot;java&quot; import&#x3D;&quot;java.util.Date&quot; %&gt;</span></pre></td></tr></table></figure>
+
+<p>language：jsp页面使用的脚本语言</p>
+<p>import：导入类</p>
+<p>pageEncoding：jsp文件自身编码 jsp-&gt;java</p>
+<p>contentType:浏览器解析jsp的编码</p>
+<h3 id="c-注释"><a href="#c-注释" class="headerlink" title="c.注释"></a>c.注释</h3><p>注释共三个：</p>
+<p>html：<!-- --></p>
+<p>java： //</p>
+<p>jsp:&lt;%– –%&gt;</p>
+<h2 id="2-Jsp9大内置对象"><a href="#2-Jsp9大内置对象" class="headerlink" title="2.Jsp9大内置对象"></a>2.Jsp9大内置对象</h2><p>(自带的，不需要new可以使用的对象)</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="C:\Users\60993\AppData\Roaming\Typora\typora-user-images\1558945927713.png" alt="1558945927713" title="">
+                </div>
+                <div class="image-caption">1558945927713</div>
+            </figure>
+
+<h6 id="out："><a href="#out：" class="headerlink" title="out："></a>out：</h6><p>​        输出对象，向客户端输出内容</p>
+<h6 id="pageContext："><a href="#pageContext：" class="headerlink" title="pageContext："></a>pageContext：</h6><h6 id="request："><a href="#request：" class="headerlink" title="request："></a>request：</h6><p>​        请求对象；存储“客户端向服务端发送的请求信息”</p>
+<h6 id="常见方法："><a href="#常见方法：" class="headerlink" title="常见方法："></a>常见方法：</h6><p>​        String  getParameter(String name):根据请求的字段名key，返回字段值value</p>
+<p>​        String[]  getParameterValues(String name)：根据请求的字段名key，返回多个字段值                                                value</p>
+<p>​        void setCharacterEncoding(“编码格式utf-8”)：设置请求编码（不设置会使用tomcat的默                                                认编码，tomcat7以前是iso-8859-1，                                                tomcat8以后是utf-8）</p>
+<p>​        getRequestDispatcher(“b.jsp”).forward(request,response); 请求转发 A-B</p>
+<p>​        getServerContext();     获取项目的ServletContext对象</p>
+<h6 id="示例：注册页面"><a href="#示例：注册页面" class="headerlink" title="示例：注册页面"></a>示例：注册页面</h6><p>​            提交参数可以通过表单也可以通过地址栏，都称作get方式</p>
+<p>​            地址栏：<a href="http://localhost:8080/ideaproject_war_exploded/show.jsp?username=aaa&amp;userpwd=1aaa&amp;userage=11&amp;userh=%E8%B6%B3%E7%90%83&amp;userh=%E7%AF%AE%E7%90%83" target="_blank" rel="noopener">http://localhost:8080/ideaproject_war_exploded/show.jsp?username=aaa&amp;userpwd=1aaa&amp;userage=11&amp;userh=%E8%B6%B3%E7%90%83&amp;userh=%E7%AF%AE%E7%90%83</a></p>
+<p>​            get方式：&lt;form action=”show.jsp”method=”get”&gt;</p>
+<p>​            post方式：&lt;form action=”show.jsp”method=”post”&gt;</p>
+<h6 id="get和post区别："><a href="#get和post区别：" class="headerlink" title="get和post区别："></a>get和post区别：</h6><p>​            get方式地址栏容纳的大小有限（4-5kb），不安全。文件上传必须用post</p>
+<p>​            用post方式最好，因为post不会在地址栏显示提交的参数信息。</p>
+<p>​            register.jsp</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&lt;%@ page contentType&#x3D;&quot;text&#x2F;html;charset&#x3D;UTF-8&quot; language&#x3D;&quot;java&quot; %&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    &lt;title&gt;Title&lt;&#x2F;title&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;head&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">        &lt;form action&#x3D;&quot;show.jsp&quot;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">            用户名：&lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;username&quot;&gt;&lt;br&#x2F;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">            密码：&lt;input type&#x3D;&quot;password&quot; name&#x3D;&quot;userpwd&quot;&gt;&lt;br&#x2F;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">            年龄：&lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;userage&quot;&gt;&lt;br&#x2F;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">            爱好：&lt;br&#x2F;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">            &lt;input type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;userh&quot; value&#x3D;&quot;足球&quot;&gt;&lt;br&#x2F;&gt;足球</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">            &lt;input type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;userh&quot; value&#x3D;&quot;篮球&quot;&gt;&lt;br&#x2F;&gt;篮球</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">            &lt;input type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;userh&quot; value&#x3D;&quot;羽毛球&quot;&gt;&lt;br&#x2F;&gt;羽毛球</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">            &lt;input type&#x3D;&quot;submit&quot; value&#x3D;&quot;提交&quot;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">        &lt;&#x2F;form&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;body&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;html&gt;</span></pre></td></tr></table></figure>
+
+<p>​            show.jsp</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&lt;%@ page contentType&#x3D;&quot;text&#x2F;html;charset&#x3D;UTF-8&quot; language&#x3D;&quot;java&quot; %&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    &lt;title&gt;Title&lt;&#x2F;title&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;head&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">        &lt;%</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">            request.setCharacterEncoding(&quot;utf-8&quot;);&#x2F;&#x2F;设置编码</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">            String name&#x3D;request.getParameter(&quot;username&quot;);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">            int age&#x3D;Integer.parseInt(request.getParameter(&quot;userage&quot;));</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">            String pwd&#x3D;request.getParameter(&quot;userpwd&quot;);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">            String[] h&#x3D;request.getParameterValues(&quot;userh&quot;);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">        %&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">        姓名：&lt;%&#x3D;name%&gt;&lt;br&#x2F;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">        年龄：&lt;%&#x3D;age%&gt;&lt;br&#x2F;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">        密码：&lt;%&#x3D;pwd%&gt;&lt;br&#x2F;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">        爱好：&lt;br&#x2F;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">        &lt;%</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">            for (String hobby:h)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">                out.print(hobby+&quot;&amp;nbsp;&quot;);&#x2F;&#x2F;&amp;nbsp代表空格，转义字符</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">            &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">        %&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;body&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;html&gt;</span></pre></td></tr></table></figure>
+
+<h6 id="response"><a href="#response" class="headerlink" title="response"></a>response</h6><h6 id="session"><a href="#session" class="headerlink" title="session"></a>session</h6><h6 id="application"><a href="#application" class="headerlink" title="application"></a>application</h6><h6 id="config"><a href="#config" class="headerlink" title="config"></a>config</h6><h6 id="page"><a href="#page" class="headerlink" title="page"></a>page</h6><h6 id="exception"><a href="#exception" class="headerlink" title="exception"></a>exception</h6>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="黄阳">
+            黄阳
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jsp/" rel="tag">jsp</a></li></ul>
+
+
+            
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/07/01/response%E5%93%8D%E5%BA%94%E5%AF%B9%E8%B1%A1/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">response响应对象</h4>
+      </a>
+    </div>
+  
+
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>黄阳 &copy; 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" target="_blank" rel="noopener" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: false, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'NotFoundHY';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'NotFoundHY';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
