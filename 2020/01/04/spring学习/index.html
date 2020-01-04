@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>spring学习 | NotFoundHY</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="spring">
+    <meta name="description" content="spring学习1.入门案例bean： 1public class HelloWorld &amp;#123;2    private String name;3    public void hello()&amp;#123;4        System.out.println(&amp;quot;hello:&amp;quot;+name);5    &amp;#125;67    public void setName(Stri">
+<meta name="keywords" content="spring">
+<meta property="og:type" content="article">
+<meta property="og:title" content="spring学习">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;04&#x2F;spring%E5%AD%A6%E4%B9%A0&#x2F;index.html">
+<meta property="og:site_name" content="NotFoundHY">
+<meta property="og:description" content="spring学习1.入门案例bean： 1public class HelloWorld &amp;#123;2    private String name;3    public void hello()&amp;#123;4        System.out.println(&amp;quot;hello:&amp;quot;+name);5    &amp;#125;67    public void setName(Stri">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="c:&#x2F;Users&#x2F;60993&#x2F;AppData&#x2F;Roaming&#x2F;Typora&#x2F;typora-user-images&#x2F;image-20200103161100120.png">
+<meta property="og:updated_time" content="2020-01-04T09:37:31.363Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:&#x2F;Users&#x2F;60993&#x2F;AppData&#x2F;Roaming&#x2F;Typora&#x2F;typora-user-images&#x2F;image-20200103161100120.png">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">黄阳</h5>
+          <a href="mailto:609936180@qq.com" target="_blank" rel="noopener" title="609936180@qq.com" class="mail">609936180@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">spring学习</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">spring学习</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2020-01-03T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2020-01-04
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/spring/">spring</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#spring学习"><span class="post-toc-number">1.</span> <span class="post-toc-text">spring学习</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-入门案例"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1.入门案例</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-配置Bean"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">2.配置Bean</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#（1）例子："><span class="post-toc-number">1.2.0.0.1.</span> <span class="post-toc-text">（1）例子：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#（2）通过构造方法来配置bean的属性"><span class="post-toc-number">1.2.0.0.2.</span> <span class="post-toc-text">（2）通过构造方法来配置bean的属性</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#（3）使用构造器注入属性值可以指定参数的位置和参数的类型，以区分重载的构造器"><span class="post-toc-number">1.2.0.0.3.</span> <span class="post-toc-text">（3）使用构造器注入属性值可以指定参数的位置和参数的类型，以区分重载的构造器</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#（4）配置属性是对象的引用时，可以用ref属性或者节点"><span class="post-toc-number">1.2.0.0.4.</span> <span class="post-toc-text">（4）配置属性是对象的引用时，可以用ref属性或者节点</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#（5）内部bean方式"><span class="post-toc-number">1.2.0.0.5.</span> <span class="post-toc-text">（5）内部bean方式</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#（6）当bean中含有集合属性时"><span class="post-toc-number">1.2.0.0.6.</span> <span class="post-toc-text">（6）当bean中含有集合属性时</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-bean之间的关系"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">3.bean之间的关系</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#（1）继承关系"><span class="post-toc-number">1.3.0.1.</span> <span class="post-toc-text">（1）继承关系</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#（2）依赖关系"><span class="post-toc-number">1.3.0.2.</span> <span class="post-toc-text">（2）依赖关系</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-Bean的作用域"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">4.Bean的作用域</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-SpEL表达式语言"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">5.SpEL表达式语言</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-spring学习"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">spring学习</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2020-01-04 00:00:00" datetime="2020-01-03T16:00:00.000Z"  itemprop="datePublished">2020-01-04</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/spring/">spring</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="spring学习"><a href="#spring学习" class="headerlink" title="spring学习"></a>spring学习</h1><h2 id="1-入门案例"><a href="#1-入门案例" class="headerlink" title="1.入门案例"></a>1.入门案例</h2><p>bean：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">public class HelloWorld &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    private String name;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    public void hello()&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">        System.out.println(&quot;hello:&quot;+name);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    public void setName(String name) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">        this.name &#x3D; name;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">        System.out.println(&quot;调用了set方法&quot;);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">    public HelloWorld() &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">        System.out.println(&quot;调用了构造方法。。。。&quot;);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<p>XML文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&lt;bean id&#x3D;&quot;helloworld&quot; class&#x3D;&quot;spring.beans.HelloWorld&quot;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">        &lt;property name&#x3D;&quot;name&quot; value&#x3D;&quot;李四&quot;&gt; &lt;&#x2F;property&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;bean&gt;</span></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">ApplicationContext applicationContext &#x3D; new ClassPathXmlApplicationContext(&quot;applicationContext.xml&quot;);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">HelloWorld helloWorld1 &#x3D; (HelloWorld) applicationContext.getBean(&quot;helloworld&quot;);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">helloWorld1.hello();</span></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="C:\Users\60993\AppData\Roaming\Typora\typora-user-images\image-20200103161100120.png" alt="image-20200103161100120" title="">
+                </div>
+                <div class="image-caption">image-20200103161100120</div>
+            </figure>
+
+<p><strong>从上面可以看出在创建IOC容器的时候，配置过的bean就已经被创建了</strong></p>
+<h2 id="2-配置Bean"><a href="#2-配置Bean" class="headerlink" title="2.配置Bean"></a>2.配置Bean</h2><h5 id="（1）例子："><a href="#（1）例子：" class="headerlink" title="（1）例子："></a>（1）例子：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"> &lt;!--配置bean</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">        class：bean的全类名，通过反射的方式在IOC容器中创建bean，要求bean中必须有无参构造器</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">        id：标识容器中的bean，是唯一的</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"> --&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">&lt;bean id&#x3D;&quot;helloworld&quot; class&#x3D;&quot;spring.beans.HelloWorld&quot;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">	 &lt;property name&#x3D;&quot;name&quot; value&#x3D;&quot;李四&quot;&gt; &lt;&#x2F;property&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;bean&gt;</span></pre></td></tr></table></figure>
+
+<h5 id="（2）通过构造方法来配置bean的属性"><a href="#（2）通过构造方法来配置bean的属性" class="headerlink" title="（2）通过构造方法来配置bean的属性"></a>（2）通过构造方法来配置bean的属性</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&lt;bean id&#x3D;&quot;car&quot; class&#x3D;&quot;spring.beans.Car&quot;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">       &lt;constructor-arg value&#x3D;&quot;奥迪&quot;&gt;&lt;&#x2F;constructor-arg&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">       &lt;constructor-arg value&#x3D;&quot;上海&quot;&gt;&lt;&#x2F;constructor-arg&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">       &lt;constructor-arg value&#x3D;&quot;1000&quot;&gt;&lt;&#x2F;constructor-arg&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">   &lt;&#x2F;bean&gt;</span></pre></td></tr></table></figure>
+
+<h5 id="（3）使用构造器注入属性值可以指定参数的位置和参数的类型，以区分重载的构造器"><a href="#（3）使用构造器注入属性值可以指定参数的位置和参数的类型，以区分重载的构造器" class="headerlink" title="（3）使用构造器注入属性值可以指定参数的位置和参数的类型，以区分重载的构造器"></a>（3）使用构造器注入属性值可以指定参数的位置和参数的类型，以区分重载的构造器</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&lt;bean id&#x3D;&quot;car2&quot; class&#x3D;&quot;spring.beans.Car&quot;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">       &lt;constructor-arg value&#x3D;&quot;宝马&quot; type&#x3D;&quot;java.lang.String&quot;&gt;&lt;&#x2F;constructor-arg&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">       &lt;!--如果字面值包含特殊字符，可以用  &lt;![CDATA[]]&gt;  包裹起来  --&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">       &lt;!--属性值也可以使用value子节点来配置--&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">       &lt;constructor-arg type&#x3D;&quot;java.lang.String&quot;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">           &lt;value&gt;&lt;![CDATA[&lt;&quot;上海&quot;&gt;]]&gt;&lt;&#x2F;value&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">       &lt;&#x2F;constructor-arg&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">       &lt;constructor-arg value&#x3D;&quot;250&quot; type&#x3D;&quot;int&quot;&gt;&lt;&#x2F;constructor-arg&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">       &lt;!--这里还可以写成value子节点的形式。如下--&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">       &lt;!--</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">               &lt;constructor-arg  type&#x3D;&quot;int&quot;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">                   &lt;value&gt;300&lt;&#x2F;value&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">              &lt;&#x2F;constructor-arg&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">        --&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">   &lt;&#x2F;bean&gt;</span></pre></td></tr></table></figure>
+
+<h5 id="（4）配置属性是对象的引用时，可以用ref属性或者节点"><a href="#（4）配置属性是对象的引用时，可以用ref属性或者节点" class="headerlink" title="（4）配置属性是对象的引用时，可以用ref属性或者节点"></a>（4）配置属性是对象的引用时，可以用ref属性或者<ref>节点</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&lt;bean id&#x3D;&quot;person&quot; class&#x3D;&quot;spring.beans.Person&quot;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">       &lt;property name&#x3D;&quot;name&quot; value&#x3D;&quot;孙笑川&quot;&gt;&lt;&#x2F;property&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">       &lt;property name&#x3D;&quot;age&quot; value&#x3D;&quot;25&quot; &gt;&lt;&#x2F;property&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">       &lt;property name&#x3D;&quot;car&quot; ref&#x3D;&quot;car&quot;&gt;&lt;&#x2F;property&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">   &lt;&#x2F;bean&gt;</span></pre></td></tr></table></figure>
+
+<h5 id="（5）内部bean方式"><a href="#（5）内部bean方式" class="headerlink" title="（5）内部bean方式"></a>（5）内部bean方式</h5><p>此时内部bean不能被外部引用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&lt;bean id&#x3D;&quot;person2&quot; class&#x3D;&quot;spring.beans.Person&quot;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">       &lt;property name&#x3D;&quot;name&quot; value&#x3D;&quot;孙笑川&quot;&gt;&lt;&#x2F;property&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">       &lt;property name&#x3D;&quot;age&quot; value&#x3D;&quot;25&quot; &gt;&lt;&#x2F;property&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">       &lt;property name&#x3D;&quot;car&quot;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">           &lt;bean  class&#x3D;&quot;spring.beans.Car&quot;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">               &lt;constructor-arg value&#x3D;&quot;奥迪111&quot;&gt;&lt;&#x2F;constructor-arg&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">               &lt;constructor-arg value&#x3D;&quot;上海111&quot;&gt;&lt;&#x2F;constructor-arg&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">               &lt;constructor-arg value&#x3D;&quot;1000111&quot;&gt;&lt;&#x2F;constructor-arg&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">           &lt;&#x2F;bean&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">       &lt;&#x2F;property&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">   &lt;&#x2F;bean&gt;</span></pre></td></tr></table></figure>
+
+<h5 id="（6）当bean中含有集合属性时"><a href="#（6）当bean中含有集合属性时" class="headerlink" title="（6）当bean中含有集合属性时"></a>（6）当bean中含有集合属性时</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&lt;bean id&#x3D;&quot;person3&quot; class&#x3D;&quot;spring.beans.PersonList&quot;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">       &lt;property name&#x3D;&quot;name&quot; value&#x3D;&quot;孙笑川&quot;&gt;&lt;&#x2F;property&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">       &lt;property name&#x3D;&quot;age&quot; value&#x3D;&quot;25&quot; &gt;&lt;&#x2F;property&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">       &lt;property name&#x3D;&quot;cars&quot;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">           &lt;list&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">               &lt;ref bean&#x3D;&quot;car&quot;&gt;&lt;&#x2F;ref&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">               &lt;ref bean&#x3D;&quot;car2&quot;&gt;&lt;&#x2F;ref&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">           &lt;&#x2F;list&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">       &lt;&#x2F;property&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">   &lt;&#x2F;bean&gt;</span></pre></td></tr></table></figure>
+
+
+
+<h2 id="3-bean之间的关系"><a href="#3-bean之间的关系" class="headerlink" title="3.bean之间的关系"></a>3.bean之间的关系</h2><h4 id="（1）继承关系"><a href="#（1）继承关系" class="headerlink" title="（1）继承关系"></a>（1）继承关系</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&lt;bean id&#x3D;&quot;address&quot; class&#x3D;&quot;spring2.Address&quot;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    p:city&#x3D;&quot;北京&quot; p:street&#x3D;&quot;人民路&quot;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">   &lt;&#x2F;bean&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">   &lt;!--&lt;bean id&#x3D;&quot;address2&quot; class&#x3D;&quot;spring2.Address&quot;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">         p:city&#x3D;&quot;北京&quot; p:street&#x3D;&quot;中山路&quot;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">   &lt;&#x2F;bean&gt;--&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">   &lt;!--bean配置的继承：使用bean的parent属性指定要继承的bean的配置</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">       如下：address2会继承address的city属性</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">   --&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">   &lt;bean id&#x3D;&quot;address2&quot; p:street&#x3D;&quot;中山路&quot; parent&#x3D;&quot;address&quot;&gt;&lt;&#x2F;bean&gt;</span></pre></td></tr></table></figure>
+
+<p>​    抽象bean：bean的abstract属性设置成true，此时这个bean不能被ioc容器实例化，只能被继承配置</p>
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&lt;bean id&#x3D;&quot;address&quot; class&#x3D;&quot;spring2.Address&quot; abstract&#x3D;&quot;true&quot;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">   p:city&#x3D;&quot;北京&quot; p:street&#x3D;&quot;人民路&quot;&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  &lt;&#x2F;bean&gt;</span></pre></td></tr></table></figure>
+
+<p>​    注：并不是bean所有属性都会被继承，例如abstract就不会被继承。</p>
+<h4 id="（2）依赖关系"><a href="#（2）依赖关系" class="headerlink" title="（2）依赖关系"></a>（2）依赖关系</h4><p>通过depends-on属性来设定本bean的前置依赖bean，前置bean须在本bean实例化之前创建好</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&lt;bean id&#x3D;&quot;car&quot; class&#x3D;&quot;spring.beans.Car&quot; p:brand&#x3D;&quot;aodi&quot; p:corp&#x3D;&quot;shanghai&quot; p:price&#x3D;&quot;200000&quot;&gt;&lt;&#x2F;bean&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    &lt;bean id&#x3D;&quot;person&quot; class&#x3D;&quot;spring2.Person&quot; p:name&#x3D;&quot;张山&quot; p:address-ref&#x3D;&quot;address2&quot; depends-on&#x3D;&quot;car&quot;&gt;&lt;&#x2F;bean&gt;</span></pre></td></tr></table></figure>
+
+<h2 id="4-Bean的作用域"><a href="#4-Bean的作用域" class="headerlink" title="4.Bean的作用域"></a>4.Bean的作用域</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">Address address &#x3D; (Address) applicationContext.getBean(&quot;address2&quot;);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">Address address2 &#x3D; (Address) applicationContext.getBean(&quot;address2&quot;);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">System.out.println(address&#x3D;&#x3D;address2);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">输出为：true</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">	说明两次默认生成的都是同一个bean</span></pre></td></tr></table></figure>
+
+<p>将bean的scope属性设置成prototype，得到的结果即为false，也就是每次向ioc容器获取bean时都是新的bean</p>
+<p>scope属性的默认值是：</p>
+<p>​    singleton，单例。容器初始化时就创建bean，在整个容器生命周期内只创建一个bean，是单例的。</p>
+<p>​    prototype：原型的，容器初始化时不创建bean，在每次请求时创建一个新的bean</p>
+<h2 id="5-SpEL表达式语言"><a href="#5-SpEL表达式语言" class="headerlink" title="5.SpEL表达式语言"></a>5.SpEL表达式语言</h2>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="黄阳">
+            黄阳
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring/" rel="tag">spring</a></li></ul>
+
+
+            
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/08/19/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%A0%88/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">数据结构-栈</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>黄阳 &copy; 2019 - 2020</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" target="_blank" rel="noopener" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: false, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'NotFoundHY';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'NotFoundHY';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
